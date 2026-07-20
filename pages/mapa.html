@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dia">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visita CABA - Mapa</title>
+  <meta name="description" content="Mapa interactivo de comunas y lugares secretos de CABA.">
+  <link rel="stylesheet" href="../assets/css/themes.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../index.html" aria-label="Visita CABA - Inicio">
+      <svg class="brand-icon" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false">
+        <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/>
+        <polygon points="12,4 15,12 12,20 9,12" fill="currentColor"/>
+        <circle cx="12" cy="12" r="2" fill="var(--blanco-tarjeta)"/>
+      </svg>
+      <span class="brand-text">Visita CABA</span>
+    </a>
+    <nav class="main-nav" aria-label="Navegación principal">
+      <ul>
+        <li><a href="mapa.html" aria-current="page">Mapa</a></li>
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="lugares.html">Lugares</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <button type="button" class="btn-favoritos" aria-label="Ver mis favoritos">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false">
+          <path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <button type="button" class="btn-tema" aria-label="Cambiar a modo noche" aria-pressed="false">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false">
+          <circle cx="12" cy="12" r="5" fill="currentColor"/>
+          <g stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="12" y1="2" x2="12" y2="5"/>
+            <line x1="12" y1="19" x2="12" y2="22"/>
+            <line x1="2" y1="12" x2="5" y2="12"/>
+            <line x1="19" y1="12" x2="22" y2="12"/>
+            <line x1="4.5" y1="4.5" x2="6.5" y2="6.5"/>
+            <line x1="17.5" y1="17.5" x2="19.5" y2="19.5"/>
+            <line x1="4.5" y1="19.5" x2="6.5" y2="17.5"/>
+            <line x1="17.5" y1="6.5" x2="19.5" y2="4.5"/>
+          </g>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="mapa-layout" aria-label="Mapa interactivo de CABA">
+      <aside class="mapa-filtros" aria-labelledby="titulo-filtros">
+        <h2 id="titulo-filtros">Filtros</h2>
+
+        <fieldset>
+          <legend>Comuna</legend>
+          <label for="filtro-comuna">Comuna</label>
+          <select id="filtro-comuna" name="comuna">
+            <option value="">Todas</option>
+          </select>
+        </fieldset>
+
+        <fieldset>
+          <legend>Barrio</legend>
+          <label for="filtro-barrio">Barrio</label>
+          <select id="filtro-barrio" name="barrio">
+            <option value="">Todos</option>
+          </select>
+        </fieldset>
+
+        <fieldset>
+          <legend>Tipo de Lugar</legend>
+          <label for="filtro-tipo">Tipo de lugar</label>
+          <select id="filtro-tipo" name="tipo">
+            <option value="">Todos</option>
+            <option value="monumento">Monumento</option>
+            <option value="museo">Museo</option>
+            <option value="parque">Parque</option>
+            <option value="espectaculo">Espectáculo</option>
+            <option value="gastronomia">Gastronomía</option>
+          </select>
+        </fieldset>
+
+        <fieldset>
+          <legend>Favoritos</legend>
+          <label for="filtro-favoritos">Solo favoritos</label>
+          <input type="checkbox" id="filtro-favoritos" name="favoritos">
+        </fieldset>
+      </aside>
+
+      <div class="mapa-svg-contenedor">
+        <svg id="mapa-svg" viewBox="0 0 800 800" role="img" aria-label="Mapa vectorial de comunas de CABA" xmlns="http://www.w3.org/2000/svg">
+          <!-- Los polígonos y marcadores se generan con mapa.js -->
+        </svg>
+      </div>
+
+      <aside class="mapa-detalle" aria-labelledby="titulo-detalle" aria-live="polite">
+        <h2 id="titulo-detalle">Detalle del lugar</h2>
+        <div id="panel-detalle">
+          <p class="detalle-vacio">Seleccioná un marcador en el mapa para ver los detalles.</p>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Pie de la página - Turismo CABA © 2026</p>
+    <svg class="footer-icon" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false">
+      <path d="M4 9h12v6H4z" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M16 11h3a1 1 0 0 1 1 1 3 3 0 0 1-3 3" fill="none" stroke="currentColor" stroke-width="2"/>
+      <line x1="7" y1="9" x2="7" y2="15" stroke="currentColor" stroke-width="2"/>
+    </svg>
+  </footer>
+
+  <script type="module" src="../assets/js/main.js"></script>
+  <script type="module" src="../assets/js/mapa.js"></script>
+</body>
+</html>

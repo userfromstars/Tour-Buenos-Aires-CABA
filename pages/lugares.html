@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dia">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visita CABA - Lugares</title>
+  <meta name="description" content="Explorá y filtrá el catálogo de lugares secretos de CABA.">
+  <link rel="stylesheet" href="../assets/css/themes.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../index.html" aria-label="Visita CABA - Inicio">
+      <svg class="brand-icon" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false">
+        <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/>
+        <polygon points="12,4 15,12 12,20 9,12" fill="currentColor"/>
+        <circle cx="12" cy="12" r="2" fill="var(--blanco-tarjeta)"/>
+      </svg>
+      <span class="brand-text">Visita CABA</span>
+    </a>
+    <nav class="main-nav" aria-label="Navegación principal">
+      <ul>
+        <li><a href="mapa.html">Mapa</a></li>
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="lugares.html" aria-current="page">Lugares</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <button type="button" class="btn-favoritos" aria-label="Ver mis favoritos">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false">
+          <path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <button type="button" class="btn-tema" aria-label="Cambiar a modo noche" aria-pressed="false">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false">
+          <circle cx="12" cy="12" r="5" fill="currentColor"/>
+          <g stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="12" y1="2" x2="12" y2="5"/>
+            <line x1="12" y1="19" x2="12" y2="22"/>
+            <line x1="2" y1="12" x2="5" y2="12"/>
+            <line x1="19" y1="12" x2="22" y2="12"/>
+            <line x1="4.5" y1="4.5" x2="6.5" y2="6.5"/>
+            <line x1="17.5" y1="17.5" x2="19.5" y2="19.5"/>
+            <line x1="4.5" y1="19.5" x2="6.5" y2="17.5"/>
+            <line x1="17.5" y1="6.5" x2="19.5" y2="4.5"/>
+          </g>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="catalogo" aria-labelledby="titulo-catalogo">
+      <h1 id="titulo-catalogo">Catálogo de Lugares</h1>
+
+      <form class="buscador" role="search">
+        <label for="input-busqueda" class="visually-hidden">Buscar por nombre o barrio</label>
+        <input type="search" id="input-busqueda" name="busqueda" placeholder="Buscar por nombre o barrio...">
+      </form>
+
+      <div class="catalogo-controles">
+        <label for="filtro-categoria">Categoría</label>
+        <select id="filtro-categoria" name="categoria">
+          <option value="">Todas</option>
+          <option value="monumento">Monumento</option>
+          <option value="museo">Museo</option>
+          <option value="parque">Parque</option>
+          <option value="espectaculo">Espectáculo</option>
+          <option value="gastronomia">Gastronomía</option>
+        </select>
+
+        <label for="orden">Ordenar</label>
+        <select id="orden" name="orden">
+          <option value="nombre">Nombre (A-Z)</option>
+          <option value="precio">Precio</option>
+          <option value="barrio">Barrio</option>
+          <option value="categoria">Categoría</option>
+        </select>
+
+        <button type="button" id="toggle-favoritos" class="btn-toggle">Ver mis favoritos</button>
+      </div>
+
+      <section class="resultados" aria-labelledby="titulo-resultados">
+        <h2 id="titulo-resultados" class="visually-hidden">Resultados</h2>
+        <div class="grid-cards" id="grid-lugares" role="list">
+          <!-- Las cards se renderizan con lugares.js -->
+        </div>
+        <p id="mensaje-sin-resultados" class="mensaje-sin-resultados" hidden>
+          No se encontraron lugares para tu búsqueda.
+        </p>
+      </section>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Pie de la página - Turismo CABA © 2026</p>
+    <svg class="footer-icon" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false">
+      <path d="M4 9h12v6H4z" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M16 11h3a1 1 0 0 1 1 1 3 3 0 0 1-3 3" fill="none" stroke="currentColor" stroke-width="2"/>
+      <line x1="7" y1="9" x2="7" y2="15" stroke="currentColor" stroke-width="2"/>
+    </svg>
+  </footer>
+
+  <script type="module" src="../assets/js/main.js"></script>
+  <script type="module" src="../assets/js/lugares.js"></script>
+</body>
+</html>

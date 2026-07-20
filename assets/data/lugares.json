@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "nombre": "",
+    "barrio": "",
+    "comuna": null,
+    "categoria": "",
+    "iconoCategoria": "",
+    "descripcionCorta": "",
+    "recomendacion": "",
+    "horario": {
+      "apertura": "",
+      "cierre": "",
+      "diasDisponibles": []
+    },
+    "precio": "",
+    "rangoPrecio": null,
+    "coordenadas": {
+      "lat": null,
+      "lng": null
+    },
+    "estacionesCercanas": [],
+    "imagen": "",
+    "destacado": false
+  }
+]
